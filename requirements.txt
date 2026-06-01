@@ -1,5 +1,5 @@
 streamlit
 pandas
-msoffcrypto-tool
-xlsxwriter
+msoffcrypto-python
 openpyxl
+xlsxwriter

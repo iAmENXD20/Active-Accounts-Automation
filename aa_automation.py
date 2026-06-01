@@ -5,9 +5,9 @@ import msoffcrypto
 import openpyxl
 import re
 
-st.set_page_config(page_title="AA Automation - Excel Processor", layout="wide")
+st.set_page_config(page_title="Active Accoounts Extractor", layout="wide")
 
-st.title("📊 AA Automation: Excel Data Extractor")
+st.title("𓊍 PL Seatlease: Active Accounts Extractor")
 st.markdown("Upload one or more worklist Excel files to summarize WL DATE and No. of Active accounts.")
 
 
@@ -162,7 +162,7 @@ def build_summary_excel(records: list[dict]) -> bytes:
 # ── sidebar ────────────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.header("⚙️ Settings")
+    st.header("⛭ Settings")
     password = st.text_input("Excel Password", value="30PL2026", type="password")
     auto_detect = st.checkbox("Auto-detect header row", value=True)
 
@@ -206,7 +206,7 @@ if uploaded_files:
 
     if records:
         # ── per-file checker cards ───────────────────────────────────────────
-        st.subheader("📋 Summary")
+        st.subheader("🗁 Summary")
         for rec in records:
             st.caption(f"📄 {rec['filename']}")
             c1, c2 = st.columns(2)
@@ -217,7 +217,7 @@ if uploaded_files:
         # ── download ─────────────────────────────────────────────────────────
         excel_bytes = build_summary_excel(records)
         st.download_button(
-            label="⬇️ Download Summary as Excel",
+            label="➜] Download Summary",
             data=excel_bytes,
             file_name="30DPD_Active_Accounts_Summary.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
